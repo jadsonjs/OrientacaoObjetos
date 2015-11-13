@@ -24,6 +24,16 @@ sourceSets {
             srcDir 'template'
         }
     }
+    test {
+        java {
+            srcDir 'workcopy_test'
+            srcDir 'template_test'
+        }
+        resources {
+            srcDir 'workcopy_test'
+            srcDir 'template_test'
+        }
+    }
 }
 
 repositories {
