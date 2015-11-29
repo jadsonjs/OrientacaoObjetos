@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * Item de Pedidos. Essa entidade é um VO.
+ * Item de Pedidos. Esse objeto é um VO.
  * 
  * Existem  implicações  no  desempenho  do  sistema  fazer todos  os  objetos  do  domínio entidades.  
  * O  processo  para  se  criar  um  identificador  em  um  objeto  não  é  tão  simples.  
