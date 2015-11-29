@@ -7,11 +7,28 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
+ * Item de Pedidos. Essa entidade é um VO.
+ * 
+ * Existem  implicações  no  desempenho  do  sistema  fazer todos  os  objetos  do  domínio entidades.  
+ * O  processo  para  se  criar  um  identificador  em  um  objeto  não  é  tão  simples.  
+ * Em muitos   casos   estamos   interessados   apenas   nos   valores   dos   atributos   de   um   objeto, independentemente de qual objeto seja. 
+ * Um objeto que é usado para descrever certos aspectos do domínio, mas que não possui um identificador é chamado de  Value Object.
+ * 
+ * É  recomendável que Values  Objects sejam  imutáveis,  ou  seja,  que  eles  sejam  criados 
+ * com os valores passados no construtor e esses valores nunca mais sejam modificados durante sua  existência.  
+ * Quando  se  precisar  de  um  valor  diferente  para  os  atributos,  simplesmente  se cria outro Value Object.
+ * Isso simplifica bastante o design da aplicação. Como Values  Objects são  objetos  imutáveis  e  não  possuem  identificador 
+ * eles  podem ser compartilhados entre objetos, até mesmos objetos de outras camadas, pois não se corre o risco que outros objetos 
+ * alterem o seu valor e gerem uma inconsistência. Values  Objects podem  conter  outros Values  Objects,  bem  como  referência  para Entidades. 
+ * 
  * @author jadson
  *
  * <p><i>This program is distributed without any warranty and it
  * can be freely redistributed for research, classes or private studies, 
  * since the copyright notices are not removed.</i></p>
+ *
+ * <p>Based on Edson Yanaga example: 
+ * http://www.infoq.com/br/presentations/encapsulamento-em-java-ee?utm_source=infoq&utm_medium=videos_homepage&utm_campaign=videos_row1</p>
  *
  */
 public class ItemPedido implements Serializable{
