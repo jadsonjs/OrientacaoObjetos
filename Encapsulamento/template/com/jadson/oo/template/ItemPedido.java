@@ -52,7 +52,7 @@ public class ItemPedido implements Serializable{
 	}
 	
 	/**
-	 * Factory Method
+	 * static Factory Method
 	 * 
 	 * @param codigo
 	 * @param quantidade
