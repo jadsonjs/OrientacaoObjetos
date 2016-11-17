@@ -15,13 +15,13 @@ import java.util.Locale;
 /**
  * Entidade Pedido
  * 
- * Entidades são objetos que possuem um identificador.
- * Esse identificador deve ser único para todo o modelo. Sua principal função é distingu
+ * Entidades sï¿½o objetos que possuem um identificador.
+ * Esse identificador deve ser ï¿½nico para todo o modelo. Sua principal funï¿½ï¿½o ï¿½ distingu
  * ir um objeto de todos os outros do modelo que possuem identidade. 
- * Entidades  são  objetos  importantes  no 
+ * Entidades  sï¿½o  objetos  importantes  no 
  * Domain  Model e  eles  devem  ser  considerados 
- * desde  o  começo  da  modelagem  do  sistema.  Também  é  importante  determinar  se  um  objeto 
- * precisar ser uma entidade ou não, pois isso implica
+ * desde  o  comeï¿½o  da  modelagem  do  sistema.  Tambï¿½m  ï¿½  importante  determinar  se  um  objeto 
+ * precisar ser uma entidade ou nï¿½o, pois isso implica
  * em certos custos para o sistema.
  * 
  * @author jadson
@@ -38,7 +38,7 @@ public class Pedido implements Serializable, Formattable{
 
 	private Long id = 0l;
 	
-	/** Pedido é composto por vários itens. Você não deve deixar a abstração vazar */
+	/** Pedido composto por varios itens. Voce nao deve deixar a abstracao vazar */
 	private List<ItemPedido> itens = new ArrayList<ItemPedido>();
 
 	public List<ItemPedido> getItens() {
@@ -46,7 +46,7 @@ public class Pedido implements Serializable, Formattable{
 	}
 	
 	/**
-	 * Adiciona na lista validando as consistência dos elementos
+	 * Adiciona na lista validando as consistï¿½ncia dos elementos
 	 * 
 	 * @param item
 	 */
@@ -83,20 +83,25 @@ public class Pedido implements Serializable, Formattable{
 	}
 
 	/** 
-	 * Forma para o usuário (para Negocio)
+	 * Forma para o usuario (para Negocio)
 	 * @see java.util.Formattable#formatTo(java.util.Formatter, int, int, int)
 	 */
 	@Override
 	public void formatTo(Formatter formatter, int flags, int width, int precision) {
+		StringBuilder sb = new StringBuilder();
 		
 		if (formatter.locale().equals( new Locale("pt", "BR"))) {
-			formatter.format("Pedido ..");
+			sb.append("Pedido "+id);
         }else{
         	if (formatter.locale().equals( new Locale("en", "US"))) {
-    			formatter.format("Order ..");
+        		sb.append("Order "+id);
             }
         }
+	 
+        sb.append(" flags: "+flags+" width: "+width+" precision: "+precision);
+        
 		
+		formatter.format(sb.toString());
 	}
 	
 }
